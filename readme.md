@@ -31,8 +31,7 @@ LogiGuardians is an intelligent accident detection and response platform designe
 ### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/nabinagrawal64/logiguardians.git
-cd logiguardians
+git clone https://github.com/nabinagrawal64/accident-monitor.git
 ````
 
 ### 2. Backend (FastAPI + ML)
