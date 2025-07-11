@@ -4,7 +4,7 @@ import ActivatePanicButton from "../components/ActivatePanicButton";
 import { getToken } from "../utils/api"; // helper you made earlier
 
 const ACC_ENDPOINT =
-    import.meta.env.VITE_ACC_ENDPOINT || "http://localhost:8000/accidents";
+    import.meta.env.VITE_ACC_ENDPOINT || "https://accident-monitor.onrender.com/accidents";
 const POLL_MS = 15_000; // 15‑second refresh
 
 export default function AccidentMonitorPage({ notify, location }) {

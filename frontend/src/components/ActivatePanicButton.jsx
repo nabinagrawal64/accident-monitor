@@ -4,9 +4,9 @@ import { getToken } from "../utils/api";
 
 const FPS = 2; // how many frames / sec sent to backend
 const CONSECUTIVE_N = 5; // 5 ones in a row triggers alert
-const PRED_ENDPOINT = "http://localhost:8000/predict";
-const REPORT_ENDPOINT = "http://localhost:8000/report-accident";
-const STOP_WEB_ENDPOINT = "http://localhost:8000/stop-webcam";
+const PRED_ENDPOINT = "https://accident-monitor.onrender.com/predict";
+const REPORT_ENDPOINT = "https://accident-monitor.onrender.com/report-accident";
+const STOP_WEB_ENDPOINT = "https://accident-monitor.onrender.com/stop-webcam";
 
 export default function ActivatePanicButton({ notify, location }) {
     const [active, setActive] = useState(false);

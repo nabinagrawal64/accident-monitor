@@ -1,4 +1,4 @@
-export const API_URL = "http://localhost:8000";
+export const API_URL = "https://accident-monitor.onrender.com";
 
 /* ── localStorage helpers ─────────────────────────── */
 export const setToken = (t) => {
