@@ -8,11 +8,6 @@ from threading import Lock
 from pathlib import Path
 import logging
 logger = logging.getLogger(__name__)
-import streamlit as st
-
-st.title("My Backend App")
-st.write("Running from main.py!")
-
 
 # ─────────  Email  ─────────
 import smtplib, ssl
@@ -148,11 +143,11 @@ class ProfileUpdate(BaseModel):
 #  4. Email send
 # ------------------------------------------------------------------
 
-EMAIL_HOST = st.secrets["EMAIL_HOST"]
+EMAIL_HOST = os.getenv("EMAIL_HOST", "smtp.gmail.com")
 EMAIL_PORT = 587
-EMAIL_SENDER = st.secrets["EMAIL_SENDER"]
-EMAIL_PASS = st.secrets["EMAIL_PASS"]
-ALERT_TO   = st.secrets["ALERT_TO"]
+EMAIL_SENDER = os.getenv("EMAIL_SENDER")   # our app email
+EMAIL_PASS = os.getenv("EMAIL_PASS")             # Gmail App Password or SMTP pass
+ALERT_TO   = os.getenv("ALERT_TO")        # user email to receive alerts
 
 def send_alert_email(subject: str, body: str, to: str = ALERT_TO):
     msg = MIMEText(body)
@@ -342,5 +337,5 @@ def stop_webcam():
 # ---------- Dev runner ----------
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app", host="127.0.0.0", port=8000)
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
 
